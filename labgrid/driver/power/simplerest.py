@@ -16,8 +16,8 @@ def power_set(host, port, index, value):
     assert port is None
 
     index = int(index)
-    value = 1 if value else 0
-    requests.get(host.format(value=value, index=index))
+    value_str = "ON" if value else "OFF"
+    requests.get(host.format(value=value_str, index=index))
 
 def power_get(host, port, index):
     assert port is None
